@@ -14,7 +14,10 @@ class _SharedPreferencesPageState extends State<SharedPreferencesPage> {
 
   SharedPreferences? preferences;
   bool? deger;
-  String? deger3;
+  String? deger2;
+  double? deger3;
+
+
 
   @override
   void initState() {
@@ -36,15 +39,16 @@ class _SharedPreferencesPageState extends State<SharedPreferencesPage> {
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
               ElevatedButton(onPressed: () {
-                var deger2 = preferences!.setBool('ourBool', true);
-                print(deger2);
+                var deger = preferences!.setBool('ourBool',true);
+                print(deger);
               },child: const Text('Set Value')),
               ElevatedButton(onPressed: (){
                setState(() {
-                 deger = preferences!.getBool('ourBool');
+                 preferences!.getBool('ourBool');
+
                });
               }, child: const Text('Get Value')),
-              Text(deger != null ? deger.toString() :'Boþ'),
+              Text(deger != null ? deger.toString() :'Bos'),
             ],
           ),
         ),
