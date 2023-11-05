@@ -49,7 +49,7 @@ android {
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        minDexEnabled = true
+
     }
 
     buildTypes {

@@ -1,4 +1,4 @@
-// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.
+// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -35,19 +35,19 @@ class _SharedPreferencesPageState extends State<SharedPreferencesPage> {
           child: Column(
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
-              ElevatedButton(onPressed: () async {
-                await preferences!.setBool('ourBool', true));
-              },child: const Text('Set Value'),
+              ElevatedButton(onPressed: () {
+                var deger2 = preferences!.setBool('ourBool', true);
+                print(deger2);
+              },child: const Text('Set Value')),
               ElevatedButton(onPressed: (){
-               setState(() async {
-                 deger = await preferences!.getBool('ourBool');
+               setState(() {
+                 deger = preferences!.getBool('ourBool');
                });
-              }, child: Text('Get Value')),
+              }, child: const Text('Get Value')),
               Text(deger != null ? deger.toString() :'Boþ'),
             ],
-
           ),
         ),
       );
+    }
   }
-}
